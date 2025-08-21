@@ -1,9 +1,12 @@
 import pyairbnb
-#]import csv
-#from datetime import datetime
+
+# ]import csv
+# from datetime import datetime
 from collections.abc import MutableMapping
-#from openpyxl import Workbook
+
+# from openpyxl import Workbook
 from flask import Flask, request
+
 
 def do_data(
     currency="GBP",
@@ -87,6 +90,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 @app.route("/data")
 def hello_world():
     currency = request.args.get("currency")
@@ -120,6 +124,5 @@ def hello_world():
         free_cancellation=free_cancellation,
         language=language,
         proxy_url=proxy_url,
-        flat_results=flat_results,
     )
     return {"results": flat_results, "images": image_rows}
