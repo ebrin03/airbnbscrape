@@ -81,8 +81,6 @@ def do_data(
     # === FLATTEN LISTINGS ===
     flat_results = [flatten_json(listing) for listing in search_results]
 
-    print(flat_results)
-
     return flat_results, image_rows
 
 
